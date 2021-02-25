@@ -52,7 +52,7 @@ class User < ApplicationRecord
   scope :available, -> { where(deleted_at: nil) }
 
   def session_key
-    Rails.cache.read("#{id}_session_key")
+    Rails.cache.read("#{uid}_session_key")
   end
 
   def verify_password(password)
@@ -72,8 +72,8 @@ class User < ApplicationRecord
   end
 
   def generate_session_key
-    session_key = Rails.cache.read("#{id}_session_key") || SecureRandom.hex(10)
-    Rails.cache.write("#{id}_session_key", session_key, expires_in: 1.month)
+    session_key = Rails.cache.read("#{uid}_session_key") || SecureRandom.hex(10)
+    Rails.cache.write("#{uid}_session_key", session_key, expires_in: 1.month)
     session_key
   end
 

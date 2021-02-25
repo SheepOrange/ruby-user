@@ -148,12 +148,17 @@ module V1
       end
 
       group do
-        before { staff! }
-        desc "Staff log out", headers: Root.auth_headers
-        delete "log_out" do
-          uid = current_user.uid
-          Rails.cache.delete("#{uid}_session_key")
-          response_format
+        before { authenticate! }
+        desc 'Sign out', headers: Root.auth_headers
+        delete 'sign_out' do
+          user = current_user
+          PaperTrail.request.whodunnit = user.username || 'unknown user'
+          user.paper_trail_event = 'sign_out'
+          if Rails.cache.delete("#{user.uid}_session_key")
+            response_format
+          else
+            error!(result: false, message: I18n.t("activerecord.errors.messages.logout_fail"), status: 422)
+          end
         end
       end
 
