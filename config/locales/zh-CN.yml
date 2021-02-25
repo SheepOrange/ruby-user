@@ -1,0 +1,333 @@
+zh-CN:
+  active_admin:
+    reset_password: 重置密码
+    score_history: 积分变动
+    invitees: 邀请列表
+    total: 统计
+    notice:
+      reset_password: 密码重置成功
+  activerecord:
+    attributes:
+      product:
+        task: 任务
+      user:
+        username: 用户名
+        mobile: 手机号
+        email: 邮箱
+        verify_code: 验证码
+        google_token: 谷歌授权
+        mobile_countrycode: 国家码
+        lastlogintime: 最近登录时间
+        lastoperationtime: 最近活动时间
+        state: 状态
+        lastchoice: 最近选择
+        score_balance: 积分余额
+        score_balance_whole: 积分总额
+        score_expirydate: 积分到期时间
+        created_at: 创建时间
+        invitee_number: 邀请人数
+      configuration:
+        bind_email_reward: 绑定邮箱
+        post_third_task_reward: 发布任务3次奖励
+        post_first_task_reward: 发布任务奖励
+        post_third_job_reward: 发布工作3次奖励
+        post_first_job_reward: 发布工作奖励
+        post_logo_reward: 上传Logo奖励
+        apply_tenth_job_reward: 申请工作10次奖励
+        apply_first_job_reward: 申请工作奖励
+        invitee_create_resume_reward: 邀请创建简历奖励
+        invitee_post_job_reward: 邀请发布工作奖励
+        create_resume_reward: 创建简历奖励
+        check_in_reward: 签到奖励
+        post_task_reward: 发布任务奖励
+        payment_reward: 消费奖励
+        sign_up_reward: 注册奖励
+        score_package_2k_score: "充值2000积分"
+        score_package_8k_score: "充值8000积分"
+        score_package_20k_score: "充值20000积分"
+        webdev_cent: "网页开发服务"
+        logo_design_cent: "Logo设计服务"
+        resume_design_cent: "订制简历服务"
+        batch_resume_20_price_cent: "群发简历服务"
+        membership_cent: "会员服务"
+        contract_design_cent: "订制合同服务"
+        booklet_design_cent: "宣传资料设计服务"
+        consulting_cent: "雇佣咨询服务"
+        download_resume_score: "下载简历服务"
+        invitee_sign_up: "被邀请人注册成功"
+        top_job_cent: "置顶职位24小时"
+        top_task_cent: "置顶任务24小时"
+        apply_event_reward: 报名活动奖励
+        invite_event_reward: 邀请活动奖励
+        invitee_over_20_reward: 邀请注册超过20人奖励
+        refer_sign_up_reward: 被邀请注册奖励
+        invitee_sign_up_reward: 邀请注册奖励
+        check_in_over_5_reward: 连续签到超过5天奖励
+        check_in_over_14_reward: 连续签到超过14天奖励
+        check_in_over_30_reward: 连续签到超过30天奖励
+        download_jobneed_cent: "下载求职需求"
+    score_actions:
+      invitee_post_job_reward: 成功发布招聘职位
+      invitee_create_resume_reward: 成功发布个人简历
+      invitee_sign_up_reward: 成功注册
+      invitee_over_20_reward: 成功注册(20人以上)
+    notice:
+      need_to_pay: 需付费查看
+    models:
+
+
+    errors:
+      format: "%{attribute}%{message}"
+      messages:
+        permission_deny: 您不允许登录该平台
+        record_exists: 记录已存在，请勿重复创建
+        login_fail: 登录失败，此%{attribute}没有注册
+        login_fail_google: 登录失败，此谷歌账号没有注册
+        login_fail_wechat: 登录失败，此微信账号没有注册
+        signup_fail_google: 注册失败，此谷歌账号已注册
+        signup_fail_wechat: 注册失败，此微信账号已注册
+        not_sign_up: 此手机号没有注册
+        mobile_taken: 手机号已注册
+        email_taken: 邮箱已注册
+        authenticate_failed: 您还未登录
+        password_invalid: 密码错误
+        otp_code_invalid: 验证码错误
+        invite_code_invalid: 邀请码错误
+        invalid_account: 账户已失效，请联系平台管理员
+        unable_send_code: 验证码发送失败，请重试
+        sms_limit: 验证码发送失败：超过次数限制
+        attribute_invalid: "%{attr}无效"
+        logout_fail: 登出失败，请重试
+        forbidden_account_operation: 此账户操作被禁止
+        record_invalid: '验证失败: %{errors}'
+        record_not_found: "%{record}不存在"
+        accepted: 必须是可被接受的
+        blank: 不能为空
+        confirmation: 与 %{attribute} 不匹配
+        empty: 不能留空
+        equal_to: 必须等于 %{count}
+        even: 必须为双数
+        exclusion: 是保留关键字
+        greater_than: 必须大于 %{count}
+        greater_than_or_equal_to: 必须大于或等于 %{count}
+        inclusion: 不包含于列表中
+        invalid: 是无效的
+        less_than: 必须小于 %{count}
+        less_than_or_equal_to: 必须小于或等于 %{count}
+        model_invalid: '%{errors}'
+        not_a_number: 不是数字
+        not_an_integer: 必须是整数
+        odd: 必须为单数
+        other_than: 长度非法（不可为 %{count} 个字符
+        present: 必须是空白
+        required: 必须存在
+        taken: 已经被使用
+        too_long: 过长（最长为 %{count} 个字符）
+        too_short: 过短（最短为 %{count} 个字符）
+        wrong_length: 长度非法（必须为 %{count} 个字符）
+        wrong_users: 创建会话用户数量错误
+        score_insufficient: 积分不足
+        account_bound: 该账号已被其他账户绑定
+        already_add: 已存在
+        already_submitted: 已申请过该职位
+        unable_edit: 不能编辑
+        no_company: 没有此公司信息
+        no_position: 没有相关职位
+        only_one_default: 只能有一个默认简历
+        job_type_invalid: 无效工作类型
+        password_format: "支付密码长度为8-20，必须包含大写字母小写字母以及数字"
+        attribute_confirmation: "%{attr1}与%{attr2}不匹配"
+        at_least_one_of_contact_info: 必须填写至少一项联系信息
+        at_least_one_of_info: 至少提供一项注册信息
+        resume_xor_name_card: 申请职位必须提供简历或者个人信息
+        address_postcode_required: 线下任务地址和邮编为必填项
+        resume_pdf_fail: 不能生成PDF简历
+        order_unpaid: 订单还未支付
+        resume_blur_fail: 无法生成模糊简历
+        not_reset_password: 此手机号/邮箱未注册
+        extension_whitelist_error: 上传文件格式错误
+        collar_type_error: 申请此职位的类型错误
+        valid_enterprise_present: 已存在有效的企业认证
+        check_in_exists: 今日已签到
+        event_not_start: "活动还未开始，请于%{attr}之后再试"
+        event_not_registed: 您尚未报名该活动
+        abn_required: 先填写ABN信息
+        company_name_exist: 公司名已被其他用户认证，如有疑问请联系客服
+  date:
+    abbr_day_names:
+    - 周日
+    - 周一
+    - 周二
+    - 周三
+    - 周四
+    - 周五
+    - 周六
+    abbr_month_names:
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 星期日
+    - 星期一
+    - 星期二
+    - 星期三
+    - 星期四
+    - 星期五
+    - 星期六
+    formats:
+      default: "%Y-%m-%d"
+      long: "%Y年%m月%d日"
+      short: "%m月%d日"
+    month_names:
+    - 一月
+    - 二月
+    - 三月
+    - 四月
+    - 五月
+    - 六月
+    - 七月
+    - 八月
+    - 九月
+    - 十月
+    - 十一月
+    - 十二月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours: 大约 %{count} 小时
+      about_x_months: 大约 %{count} 个月
+      about_x_years: 大约 %{count} 年
+      almost_x_years: 接近 %{count} 年
+      half_a_minute: 半分钟
+      less_than_x_seconds: 不到 %{count} 秒
+      less_than_x_minutes: 不到 %{count} 分钟
+      over_x_years: "%{count} 年多"
+      x_seconds: "%{count} 秒"
+      x_minutes: "%{count} 分钟"
+      x_days: "%{count} 天"
+      x_months: "%{count} 个月"
+      x_years: "%{count} 年"
+    prompts:
+      second: 秒
+      minute: 分
+      hour: 时
+      day: 日
+      month: 月
+      year: 年
+  helpers:
+    select:
+      prompt: 请选择
+    submit:
+      create: 新增%{model}
+      submit: 储存%{model}
+      update: 更新%{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u %n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: CN¥
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: 十亿
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: "%n %u"
+        units:
+          byte: 字节
+          eb: EB
+          gb: GB
+          kb: KB
+          mb: MB
+          pb: PB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " 以及 "
+      two_words_connector: " 和 "
+      words_connector: "、"
+  time:
+    am: 上午
+    formats:
+      default: "%Y年%m月%d日 %A %H:%M:%S %Z"
+      long: "%Y年%m月%d日 %H:%M"
+      short: "%m月%d日 %H:%M"
+    pm: 下午
+  poster:
+    type: "类型"
+    hourly_salary: "时薪"
+    annual_salary: "年薪"
+    negotiation: "面议"
+    edu_bg: "教育背景要求"
+    none: "不限"
+    Diploma: "高中"
+    Advanced_Diploma_or_Associate_Degree: "副学士"
+    Bachelor_Degree: "学士"
+    Bachelor_Honours_Degree_or_Graduate_Certificate_or_Graduate_Diploma: "研究生文凭"
+    Masters_Degree: "硕士"
+    Doctoral_Degree: "博士"
+    working_experience: "工作经验"
+    year: "年"
+    work_place: "工作场所"
+    work_from_home: "在家办公"
+    work_at_company: "在公司办公"
+    industry: "行业"
+    job_description: "工作内容"
+    job_requirement: "求职者需具备"
+    job_benefits: "福利"
+    follow_us: "关注我们"
+    know_more: "了解更多职位详情"
+    email_address: "投递邮箱"
+    tel: "手机号码"
+    full_time: "全职"
+    part_time: "兼职"
+    contract: "合同工"
+    casual: "临时工"
+    location: "职位所在地"
+  english: "英语"
+  chinese: "中文"
+  arabic: "阿拉伯语"
+  spanish: "西班牙语"
+  french: "法语"
+  russian: "俄语"
+  others: "其他"

@@ -25,13 +25,11 @@ gem 'redis-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 # A Ruby framework for rapid API development with great conventions.
-gem 'grape', '~> 1.5', '>= 1.5.2'
-gem 'grape-entity', '~> 0.8.2'
-gem 'grape-swagger', '~> 1.3', '>= 1.3.1'
-gem 'grape-swagger-entity', '~> 0.5.1'
-gem 'grape-swagger-rails', '~> 0.3.1'
-gem 'grape_logging', '~> 1.8', '>= 1.8.4'
-
+gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger'
+gem 'grape-swagger-entity'
+gem 'grape-swagger-ui'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -64,6 +62,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

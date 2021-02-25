@@ -27,7 +27,170 @@
 #   'true': 'foo'
 #
 # To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
+# available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      configuration:
+        bind_email_reward: "bind email reward"
+        post_third_task_reward: "post third task reward"
+        post_first_task_reward: "post first task reward"
+        post_third_job_reward: "post third job reward"
+        post_first_job_reward: "post first job reward"
+        post_logo_reward: "post logo reward"
+        apply_tenth_job_reward: "apply tenth job reward"
+        apply_first_job_reward: "apply first job reward"
+        invitee_create_resume_reward: "invitee create resume reward"
+        invitee_post_job_reward: "invitee post job reward"
+        create_resume_reward: "create resume reward"
+        post_task_reward: "post task reward"
+        check_in_reward: "check in reward"
+        payment_reward: "payment reward"
+        sign_up_reward: "sign up reward"
+        score_package_2k_score: "top up 2k points"
+        score_package_8k_score: "top up 8k points"
+        score_package_20k_score: "top up 20k points"
+        webdev_cent: "web development service"
+        logo_design_cent: "logo design service"
+        resume_design_cent: "resume design service"
+        batch_resume_20_price_cent: "mass application service"
+        membership_cent: "membership service"
+        contract_design_cent: "contract design service"
+        booklet_design_cent: "booklet design service"
+        consulting_cent: "consulting service"
+        download_resume_score: "download resume service"
+        invitee_sign_up: "invitee sign up successfully"
+        top_job_cent: "stick job at top for 24 hours"
+        top_task_cent: "stick task at top for 24 hours"
+        apply_event_reward: "event registration reward"
+        invite_event_reward: "event invitation reward"
+        invitee_over_20_reward: "invitees exceed 20 reward"
+        refer_sign_up_reward: "invitation code reward"
+        invitee_sign_up_reward: "invitee sign up reward"
+        check_in_over_5_reward: "continuous check-in exceed 5 days reward"
+        check_in_over_14_reward: "continuous check-in exceed 14 days reward"
+        check_in_over_30_reward: "continuous check-in exceed 30 days reward"
+        download_jobneed_cent: "download job requirements"
+      score_actions:
+        invitee_post_job_reward: Successfully posted job position
+        invitee_create_resume_reward: Successfully posted a resume
+        invitee_sign_up: Successfully registered
+        invitee_over_20_reward: Successful registered (more than 20 people)
+      notice:
+        need_to_pay: Pay to view
+    errors:
+      format: "%{attribute}%{message}"
+      messages:
+        permission_deny: Unable to Login
+        record_exists: Record already exist
+        login_fail: Login fail, this %{attribute} is not registere
+        login_fail_google: Login fail, this google account is not registered
+        login_fail_wechat: Login fail, this wechat account is not registered
+        signup_fail_google: Signup fail, this google account has already registered
+        signup_fail_wechat: Signup fail, this wechat account has already registered
+        not_sign_up: This phone number is not registered
+        mobile_taken: This phone number is registered
+        email_taken: This email is registered
+        authenticate_failed: You are not logged in
+        password_invalid: Password error
+        otp_code_invalid: Verify code error
+        invite_code_invalid: Invite code error
+        invalid_account: Account has been disabled, please contact the platform administrator
+        unable_send_code: Verification code sending failed, please try again
+        sms_limit: 'Verification code sending failed: exceeded limit the number of'
+        attribute_invalid: "%{attr}Invalid"
+        logout_fail: Logout failed, please retry
+        forbidden_account_operation: This account operation is prohibited
+        record_invalid: 'Validation failed: %{errors}'
+        record_not_found: "%{record}Does not exist"
+        accepted: must be acceptable
+        blank: cannot be null
+        confirmation: not match with %{attribute}
+        empty: cannot be blank
+        equal_to: equal to %{count}
+        even: must be even number
+        exclusion: Is a reserved keyword
+        greater_than: greater than %{count}
+        greater_than_or_equal_to: Must be greater than or equal to %{count}
+        inclusion: Not included in the list
+        invalid: invalid
+        less_than: less than %{count}
+        less_than_or_equal_to: less than or equal to %{count}
+        model_invalid: '%{errors}'
+        not_a_number: not a number
+        not_an_integer: not an integer
+        odd: must be odd number
+        other_than: Length error not to %{count} characters
+        present: present
+        required: required
+        taken: taken
+        too_long: too long
+        too_short: too short (minimum %{count} characters)
+        wrong_length: wrong length(must be %{count} characters)
+        wrong_users: wrong users
+        score_insufficient: Points insufficient
+        account_bound: The account is other account binding
+        already_add: Already exists
+        already_submitted: have applied this job post
+        unable_edit: You can't edit
+        no_company: No this company information
+        no_position: No related position
+        only_one_default: There can be only one default resume
+        job_type_invalid: Invalid work type
+        password_format: "User password length of 8-20, must contain uppercase letters lowercase letters, and numbers"
+        attribute_confirmation: "%{attr1} not match with %{attr2}"
+        at_least_one_of_contact_info: You must fill in at least one contact information
+        at_least_one_of_info: At least contains ont registration information
+        resume_xor_name_card: Must provide resume or personal info when apply position
+        address_postcode_required: Offline task address and post code is required
+        resume_pdf_fail: Can not generate PDF resume
+        order_unpaid: The order has not been paid
+        resume_blur_fail: Fail to create blur resume
+        not_reset_password: This phone number/email is not registered
+        extension_whitelist_error: The file format is not allowed
+        collar_type_error: The job collar_type is wrong
+        valid_enterprise_present: The valid enterprise certification has exist.
+        check_in_exists: Today's check-in already exist
+        event_not_start: "The activity has not started, please try again after %{attr}"
+        event_not_registed: You have not registered for this activity.
+        abn_required: ABN is required.
+        company_name_exist: The company name has been verified by other users, if you have any questions, please contact customer service.
+  poster:
+    type: "Type"
+    hourly_salary: "Hourly Pay"
+    annual_salary: "Annual Pay"
+    negotiation: "Negotiation"
+    edu_bg: "Education"
+    none: "unlimited"
+    Diploma: "Diploma"
+    Advanced_Diploma_or_Associate_Degree: "Advanced Diploma"
+    Bachelor_Degree: "Bachelor"
+    Bachelor_Honours_Degree_or_Graduate_Certificate_or_Graduate_Diploma: "Graduate Diploma"
+    Masters_Degree: "Masters"
+    Doctoral_Degree: "Doctoral"
+    working_experience: "Working Experience"
+    year: "year"
+    work_place: "Work Place"
+    work_from_home: "Work From Home"
+    work_at_company: "Work in Office"
+    industry: "Industry"
+    job_description: "Job Description"
+    job_requirement: "The candidate should have"
+    job_benefits: "Benefits"
+    follow_us: "Follow us"
+    know_more: "Know more jobs"
+    email_address: "Email"
+    tel: "Tel"
+    full_time: "Full time"
+    part_time: "Part time"
+    contract: "Contract"
+    casual: "Casual"
+    location: "Address of the position"
+  english: "English"
+  chinese: "Chinese"
+  arabic: "Arabic"
+  spanish: "Spanish"
+  french: "French"
+  russian: "Russian"
+  others: "Others"

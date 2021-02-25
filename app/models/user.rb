@@ -3,70 +3,72 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
-#  email                  :string           default(""), not null
-#  encrypted_password     :string           default(""), not null
-#  reset_password_token   :string
-#  reset_password_sent_at :datetime
-#  remember_created_at    :datetime
-#  sign_in_count          :integer          default(0), not null
-#  current_sign_in_at     :datetime
-#  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string
-#  last_sign_in_ip        :string
-#  username               :string
 #  avatar                 :string
-#  uid                    :string
-#  mobile                 :string
-#  role                   :integer
+#  current_sign_in_at     :datetime
+#  current_sign_in_ip     :string
+#  deleted_at             :datetime
+#  email                  :string
+#  encrypted_password     :string           default(""), not null
 #  first_name             :string
 #  last_name              :string
+#  last_sign_in_at        :datetime
+#  last_sign_in_ip        :string
+#  mobile                 :string
+#  remember_created_at    :datetime
+#  reset_password_sent_at :datetime
+#  reset_password_token   :string
+#  role                   :integer
 #  salt                   :string
+#  sign_in_count          :integer          default(0), not null
+#  uid                    :string
+#  username               :string           default(""), not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_username              (username) UNIQUE
 #
 require 'bcrypt'
 class User < ApplicationRecord
   include BCrypt
-  has_secure_password
+
   has_paper_trail skip: [:sign_in_count, :current_sign_in_at, :last_sign_in_at,
     :current_sign_in_ip, :last_sign_in_ip, :created_at, :updated_at]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,:recoverable, :rememberable,
-        :validatable, :trackable
+          :trackable
 
   before_validation :generate_attrs, on: :create
-  validates :mobile, uniqueness: true, allow_blank: true, allow_nil: true, phone: {country_specifier: -> user {
-    Phonelib.parse(user.mobile_countrycode + user.mobile).country.try(:upcase)
-  }}
-  validate :check_password
+
   validates :username, uniqueness: true, presence: true
-  validates :email, uniqueness: true, format: Devise::email_regexp
-  validates :mobile, uniqueness: true
-
-  def confirm_password
-    @confirm_password ||= Password.new(confirm_password_hash)
-  end
-
-  def confirm_password=(new_confirm_password)
-    @confirm_password = Password.create(new_confirm_password)
-    self.confirm_password_hash = @confirm_password
-  end
+  validates :email, uniqueness: true, allow_nil: true,allow_blank: true, format: { with: Devise::email_regexp}
+  validates :mobile, uniqueness: true, allow_nil: true, allow_blank: true
+  validates :password, presence: true, confirmation: true, on: :create
+  # validate :check_password_format, on: [:create, :update]
+  validate :check_password, on: [:create, :update]
+  scope :available, -> { where(deleted_at: nil) }
 
   def session_key
     Rails.cache.read("#{id}_session_key")
+  end
+
+  def verify_password(password)
+    password = Digest::MD5.hexdigest(password+salt)
+    self.valid_password?(password)
   end
 
   def encrypted_session_key
     Digest::MD5.hexdigest generate_session_key rescue nil
   end
 
+  class UserError < RuntimeError; end
+
   private
   def generate_attrs
     generate_random_column('uid', "UID#{SecureRandom.hex(5).upcase}")
-    generate_random_column('salt', SecureRandom.hex(3))
-    password += salt
-    password_confirmation += salt
   end
 
   def generate_session_key
@@ -81,14 +83,15 @@ class User < ApplicationRecord
     end while User.exists?(["#{column} = ?", send(column)])
   end
 
-  def check_password
-    if password.present? && password !~ /\A[a-zA-Z0-9\S]{8,16}\z/
+  def check_password_format
+    if password.present? && password !~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\d).{8,20}$/
       errors.add :base, I18n.t('activerecord.errors.messages.password_format')
     end
+  end
+
+  def check_password
     if password && password != password_confirmation
       errors.add :base, I18n.t('activerecord.errors.messages.attribute_confirmation', attr1: User.human_attribute_name('password_confirmation'), attr2: User.human_attribute_name('password'))
     end
   end
-
-
 end
